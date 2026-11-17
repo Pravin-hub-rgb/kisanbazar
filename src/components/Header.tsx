@@ -5,7 +5,7 @@ import { useLang } from '../i18n'
 export default function Header() {
   const { lang, toggle } = useLang()
   return (
-    <header className="shrink-0 pt-14 px-4 pb-4 bg-white border-b border-[#7A5230]/10 flex items-center justify-between sticky top-0 z-50">
+    <header className="shrink-0 px-4 pt-[max(1rem,env(safe-area-inset-top))] pb-3 bg-white border-b border-[#7A5230]/10 flex items-center justify-between sticky top-0 z-50">
       <Link to="/" className="flex items-center gap-2 outline-none">
         <div className="bg-[#2F5D3A] p-1.5 rounded-lg">
           <Icon icon="lucide:leaf" className="text-white text-xl" />

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { useT } from '../i18n'
 
@@ -27,16 +27,25 @@ export default function Login() {
 
   return (
     <div className="w-full h-screen flex flex-col grain-bg text-[#2B2118]">
-      <main className="flex-1 flex flex-col items-center justify-start pt-14 pb-[34px] px-6 overflow-y-auto">
+      <main className="flex-1 relative flex flex-col items-center justify-start pt-6 pb-[34px] px-6 overflow-y-auto">
+        {/* Back to home */}
+        <Link
+          to="/"
+          aria-label="Back to home"
+          className="absolute top-4 left-4 bg-white p-2.5 rounded-full custom-shadow text-[#2F5D3A] flex items-center"
+        >
+          <Icon icon="lucide:arrow-left" className="text-xl" />
+        </Link>
+
         {/* Brand & Logo */}
-        <div className="flex flex-col items-center gap-3 mt-8 mb-10">
+        <Link to="/" className="flex flex-col items-center gap-3 mt-6 mb-10">
           <div className="bg-[#2F5D3A] p-4 rounded-3xl custom-shadow">
             <Icon icon="lucide:leaf" className="text-white text-5xl" />
           </div>
           <h1 id="brand-title" className="text-[#2F5D3A] font-bold text-3xl tracking-tight">
             KisanBazar
           </h1>
-        </div>
+        </Link>
 
         {/* Headline */}
         <div className="text-center mb-10">
@@ -151,13 +160,17 @@ export default function Login() {
             </p>
           </div>
 
-          <div className="pt-4">
+          <div className="pt-4 space-y-3">
             <p className="text-sm text-[#2B2118]">
               {t("Don't have an account?", 'खाता नहीं है?')} <br />
               <a href="#" className="text-[#2F5D3A] font-bold">
                 {t('Sign up here', 'यहाँ साइन अप करें')} ({t('यहाँ साइन अप करें', 'Sign up here')})
               </a>
             </p>
+            <Link to="/" className="inline-flex items-center gap-1.5 text-sm font-bold text-[#7A5230] underline">
+              <Icon icon="lucide:arrow-left" className="text-base" />
+              {t('Back to home', 'होम पर वापस जाएं')}
+            </Link>
           </div>
 
           <div className="flex justify-center gap-6 text-2xl text-[#7A5230]/40">

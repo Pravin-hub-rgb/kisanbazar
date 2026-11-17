@@ -21,7 +21,7 @@ export default function Shell() {
   return (
     <div className="w-full h-screen flex flex-col grain-bg text-[#2B2118]">
       <Header />
-      <main ref={mainRef} className="flex-1 overflow-y-auto pb-24">
+      <main ref={mainRef} className="flex-1 overflow-y-auto pb-20">
         <Outlet />
       </main>
       <BottomNav activeItem={activeItem} />
